@@ -1,0 +1,15 @@
+python-dotenv==1.0.0
+Flask==3.0.0
+Flask-CORS==4.0.0
+Flask-SQLAlchemy==3.1.1
+python-docx==1.1.0
+PyPDF2==3.0.1
+langchain==0.1.0
+langchain-openai==0.0.2
+openai==1.6.1
+pydantic>=2.10,<3
+python-multipart==0.0.6
+Pillow==10.1.0
+spacy==3.7.2
+https://github.com/explosion/spacy-models/releases/download/en_core_web_sm-3.7.1/en_core_web_sm-3.7.1-py3-none-any.whl
+gunicorn==21.2.0
