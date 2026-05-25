@@ -34,15 +34,74 @@
   pointer-events: none;
 }
 
-.upload-icon, .success-icon {
-  font-size: 48px;
-  margin-bottom: 16px;
+.ui-icon {
+  width: 48px;
+  height: 48px;
+  margin: 0 auto 16px;
+  position: relative;
 }
 
-.success-icon {
-  color: #4CAF50;
-  font-size: 64px;
-  font-weight: bold;
+.ui-icon-file {
+  border: 3px solid #666;
+  border-radius: 6px;
+}
+
+.ui-icon-file::before {
+  content: '';
+  position: absolute;
+  top: 8px;
+  left: 10px;
+  right: 10px;
+  height: 3px;
+  background: #666;
+  box-shadow: 0 8px 0 #666, 0 16px 0 #666;
+}
+
+.ui-icon-upload {
+  border: 3px solid #ff9800;
+  border-radius: 6px;
+}
+
+.ui-icon-upload::before {
+  content: '';
+  position: absolute;
+  top: 14px;
+  left: 50%;
+  width: 3px;
+  height: 16px;
+  background: #ff9800;
+  transform: translateX(-50%);
+}
+
+.ui-icon-upload::after {
+  content: '';
+  position: absolute;
+  top: 12px;
+  left: 50%;
+  width: 12px;
+  height: 12px;
+  border-top: 3px solid #ff9800;
+  border-right: 3px solid #ff9800;
+  transform: translateX(-50%) rotate(-45deg);
+}
+
+.ui-icon-success {
+  width: 56px;
+  height: 56px;
+  border: 3px solid #4CAF50;
+  border-radius: 50%;
+}
+
+.ui-icon-success::after {
+  content: '';
+  position: absolute;
+  left: 18px;
+  top: 10px;
+  width: 12px;
+  height: 22px;
+  border: solid #4CAF50;
+  border-width: 0 3px 3px 0;
+  transform: rotate(45deg);
 }
 
 .success-message {
@@ -83,20 +142,15 @@
 
 .progress-text {
   font-size: 14px;
+  color: #666;
   font-weight: 600;
-  color: #4CAF50;
-  margin-top: 8px;
 }
 
 .error-message {
   margin-top: 16px;
   padding: 12px 16px;
   background: #ffebee;
-  border: 1px solid #ef5350;
-  border-radius: 6px;
   color: #c62828;
+  border-radius: 6px;
   font-size: 14px;
-  display: flex;
-  align-items: center;
-  gap: 8px;
 }

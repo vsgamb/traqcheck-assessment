@@ -60,7 +60,7 @@ const ResumeUpload = ({ onUploadSuccess }) => {
         <div className="dropzone-content">
           {uploading ? (
             <>
-              <div className="upload-icon">📤</div>
+              <div className="ui-icon ui-icon-upload" aria-hidden="true"></div>
               <p>Uploading and parsing resume...</p>
               <div className="progress-bar">
                 <div
@@ -72,13 +72,13 @@ const ResumeUpload = ({ onUploadSuccess }) => {
             </>
           ) : success ? (
             <>
-              <div className="success-icon">✓</div>
+              <div className="ui-icon ui-icon-success" aria-hidden="true"></div>
               <p className="success-message">Resume uploaded successfully!</p>
               <p className="sub-text">Upload another resume or view the dashboard below</p>
             </>
           ) : (
             <>
-              <div className="upload-icon">📄</div>
+              <div className="ui-icon ui-icon-file" aria-hidden="true"></div>
               <p className="main-text">
                 {isDragActive
                   ? 'Drop the resume here'
@@ -92,7 +92,7 @@ const ResumeUpload = ({ onUploadSuccess }) => {
 
       {error && (
         <div className="error-message">
-          <span>❌</span> {error}
+          {error}
         </div>
       )}
     </div>

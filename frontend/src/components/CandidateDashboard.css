@@ -19,6 +19,9 @@
 }
 
 .refresh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
   padding: 10px 20px;
   background: #4CAF50;
   color: white;
@@ -28,6 +31,11 @@
   font-size: 14px;
   font-weight: 600;
   transition: background 0.2s;
+}
+
+.refresh-btn-icon {
+  font-size: 16px;
+  line-height: 1;
 }
 
 .refresh-btn:hover {

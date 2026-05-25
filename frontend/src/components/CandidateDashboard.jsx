@@ -67,13 +67,13 @@ const CandidateDashboard = () => {
       <div className="dashboard-header">
         <h2>Candidate Dashboard</h2>
         <button onClick={loadCandidates} className="refresh-btn">
-          🔄 Refresh
+          <span className="refresh-btn-icon" aria-hidden="true">&#8635;</span>
+          Refresh
         </button>
       </div>
 
       {candidates.length === 0 ? (
         <div className="empty-state">
-          <div className="empty-icon">📭</div>
           <p>No candidates found</p>
           <p className="empty-subtitle">Upload a resume to get started</p>
         </div>
@@ -122,3 +122,4 @@ const CandidateDashboard = () => {
 };
 
 export default CandidateDashboard;
+

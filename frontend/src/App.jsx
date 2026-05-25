@@ -18,7 +18,6 @@ function App() {
         <nav className="navbar">
           <div className="nav-content">
             <Link to="/" className="nav-logo">
-              <span className="logo-icon">📋</span>
               <span className="logo-text">TraqCheck</span>
             </Link>
             <div className="nav-links">
@@ -53,7 +52,7 @@ function App() {
         </main>
 
         <footer className="footer">
-          <p>© 2026 TraqCheck - Candidate Management System</p>
+          <p>2026 TraqCheck - Candidate Management System</p>
         </footer>
       </div>
     </Router>

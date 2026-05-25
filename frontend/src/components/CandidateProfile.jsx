@@ -37,7 +37,7 @@ const CandidateProfile = () => {
       setRequesting(true);
       await requestDocuments(id);
       await loadCandidate();
-      alert('Document request sent successfully!');
+      alert('Document request sent successfully.');
     } catch (err) {
       alert('Failed to send document request');
     } finally {
@@ -105,7 +105,8 @@ const CandidateProfile = () => {
     <div className="profile">
       <div className="profile-header">
         <button onClick={() => navigate('/')} className="back-btn">
-          ← Back
+          <span className="back-btn-icon" aria-hidden="true">&larr;</span>
+          Back
         </button>
         <h2>Candidate Profile</h2>
       </div>
@@ -117,7 +118,7 @@ const CandidateProfile = () => {
           </div>
           <h3>{candidate.name || 'Unknown'}</h3>
           <p className="profile-subtitle">
-            {candidate.designation || 'No designation'} 
+            {candidate.designation || 'No designation'}
             {candidate.company && ` at ${candidate.company}`}
           </p>
         </div>
@@ -172,7 +173,7 @@ const CandidateProfile = () => {
               <div key={field} className="confidence-item">
                 <div className="confidence-header">
                   <span className="confidence-field">{field}</span>
-                  <span 
+                  <span
                     className="confidence-label"
                     style={{ color: getConfidenceColor(score) }}
                   >
@@ -180,9 +181,9 @@ const CandidateProfile = () => {
                   </span>
                 </div>
                 <div className="confidence-bar">
-                  <div 
+                  <div
                     className="confidence-fill"
-                    style={{ 
+                    style={{
                       width: `${score * 100}%`,
                       background: getConfidenceColor(score)
                     }}
@@ -197,15 +198,15 @@ const CandidateProfile = () => {
         <div className="info-section">
           <div className="section-header">
             <h4>Document Requests</h4>
-            <button 
-              onClick={handleRequestDocuments} 
+            <button
+              onClick={handleRequestDocuments}
               className="request-btn"
               disabled={requesting}
             >
-              {requesting ? 'Sending...' : '📨 Request Documents'}
+              {requesting ? 'Sending...' : 'Request Documents'}
             </button>
           </div>
-          
+
           {candidate.document_requests && candidate.document_requests.length > 0 ? (
             <div className="requests-list">
               {candidate.document_requests.map((req) => (
@@ -228,11 +229,11 @@ const CandidateProfile = () => {
         <div className="info-section">
           <div className="section-header">
             <h4>Submitted Documents</h4>
-            <button 
-              onClick={() => setShowUploadForm(!showUploadForm)} 
+            <button
+              onClick={() => setShowUploadForm(!showUploadForm)}
               className="upload-toggle-btn"
             >
-              {showUploadForm ? 'Cancel' : '📤 Upload Documents'}
+              {showUploadForm ? 'Cancel' : 'Upload Documents'}
             </button>
           </div>
 
@@ -246,7 +247,7 @@ const CandidateProfile = () => {
                   accept="image/*,application/pdf"
                   onChange={(e) => setPanFile(e.target.files[0])}
                 />
-                {panFile && <span className="file-name">✓ {panFile.name}</span>}
+                {panFile && <span className="file-name">Selected: {panFile.name}</span>}
               </div>
 
               <div className="form-group">
@@ -257,7 +258,7 @@ const CandidateProfile = () => {
                   accept="image/*,application/pdf"
                   onChange={(e) => setAadhaarFile(e.target.files[0])}
                 />
-                {aadhaarFile && <span className="file-name">✓ {aadhaarFile.name}</span>}
+                {aadhaarFile && <span className="file-name">Selected: {aadhaarFile.name}</span>}
               </div>
 
               <button type="submit" className="submit-btn" disabled={uploadingDocs}>
@@ -270,8 +271,8 @@ const CandidateProfile = () => {
             <div className="documents-grid">
               {candidate.documents.map((doc) => (
                 <div key={doc.id} className="document-card">
-                  <div className="document-icon">
-                    {doc.document_type === 'PAN' ? '🆔' : '📋'}
+                  <div className={`document-icon doc-icon doc-icon--${doc.document_type.toLowerCase()}`}>
+                    {doc.document_type}
                   </div>
                   <div className="document-info">
                     <span className="document-type">{doc.document_type}</span>
